@@ -18,3 +18,12 @@ function MoviesProvider({ children }) {
         </MoviesContext.Provider>
     );
 }
+
+
+
+function useMovies() {
+    const context = useContext(MoviesContext);
+    return context;
+}
+
+export { MoviesProvider, useMovies }
