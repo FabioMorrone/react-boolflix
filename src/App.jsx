@@ -9,7 +9,7 @@ function App() {
 
   const handleSearch = () => {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=123ca39c538b7ebadb458701979d7a72&query=${tasks}`)
-      .then((response) => response.json())
+      .then(res => res.json())
       .then((data) => {
         setMovie(data.results || []);
       })
@@ -21,8 +21,6 @@ function App() {
   return (
     <MoviesProvider>
       <main>
-
-
         <div className="mb-3">
           <label htmlFor="" className="form-label"></label>
           <input
@@ -41,24 +39,11 @@ function App() {
                   <p>Lingua:{film.original_language}</p>
                   <p>Voto:{film.vote_average}</p>
                 </li>
-
-
-
-
-
-
-
-
               ))}
             </ul>
           </div>
-
-
-
         </div>
       </main>
-
-
     </MoviesProvider>
   )
 }
