@@ -27,12 +27,12 @@ function App() {
   };
 
 
-  let stelle = ""
+  let stelle = '';
 
   for (let i = 0; i < numero.length; i++) {
-    const stelle = numero[i];
+    const thisStella = numero[i];
 
-    stelle.push(<FontAwesomeIcon icon="fa-solid fa-star" />)
+    stelle.push(< FontAwesomeIcon icon="fa-solid fa-star" />)
   }
 
   return (
