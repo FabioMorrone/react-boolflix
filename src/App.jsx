@@ -56,22 +56,20 @@ function App() {
                   </div>
                 ))}
 
+                {serieTv.map((serie) => (
+                  <div className="card_film col-3 card" key={serie.id}>
+                    <img src={`http://image.tmdb.org/t/p/w1920/${serie.poster_path}`} className="image_copertina card-img-top" alt="..." />
+                    <div className="card-body">
+                      <h5 className="card-title">Titolo:{serie.title}</h5>
+                      <h6 className="card-subtitle mb-2 text-muted ">Titolo Originale:{serie.original_title}</h6>
+                      <p className="card-text">Lingua:<img src={`https://flagcdn.com/24x18/${serie.original_language}.png`}
+                        alt={serie.original_language} /></p>
+                      <p>Voto:{serie.vote_average}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-
-
             </div>
-
-            <ul className="list-unstyled">
-              {serieTv.map((serie) => (
-                <li key={serie.id}>
-                  <><strong>Titolo:{serie.title}</strong></>
-                  <p><strong>Titolo Originale:{serie.original_title}</strong></p>
-                  <p><strong>Lingua:</strong><img src={`https://flagcdn.com/24x18/${serie.original_language}.png`}
-                    alt={serie.original_language} /></p>
-                  <p><strong>Voto:{serie.vote_average}</strong></p>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </main>
