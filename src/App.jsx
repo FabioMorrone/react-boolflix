@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { MoviesProvider } from "./Context/MoviesContext"
+import { MoviesProvider } from "./Context/MoviesContext";
+
 
 
 function App() {
@@ -7,6 +8,9 @@ function App() {
   const [tasks, setTasks] = useState("")
   const [movie, setMovie] = useState([])
   const [serieTv, setSerieTv] = useState([])
+
+  const stelle = [];
+
 
 
   const handleSearch = () => {
@@ -22,18 +26,19 @@ function App() {
       })
   };
 
+
   const numero = (voto) => {
     return Math.ceil(voto / 2);
+
+
   };
 
-
-  let stelle = '';
-
-  for (let i = 0; i < numero.length; i++) {
-    const thisStella = numero[i];
-
-    stelle.push(< FontAwesomeIcon icon="fa-solid fa-star" />)
+  for (let i = 0; i < numero(10); i++) {
+    stelle.push();
   }
+  console.log(stelle);
+
+
 
   return (
     <MoviesProvider>
