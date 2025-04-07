@@ -6,17 +6,17 @@ function App() {
 
   const [tasks, setTasks] = useState("")
   const [movie, setMovie] = useState([])
-  const [serieTv, setSerieTv] = useState([])
-
-
+  /*   const [serieTv, setSerieTv] = useState([])
+   */
 
   const handleSearch = () => {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=123ca39c538b7ebadb458701979d7a72&query=${tasks}`)
       .then(res => res.json())
       .then((data) => {
-        setMovie(data.res || []);
+        setMovie(data.results || []);
       })
   };
+
 
 
 
@@ -37,7 +37,7 @@ function App() {
             <ul className="list-unstyled">
               {movie.map((film) => (
                 <li key={film.id}>
-                  <h5><strong>Titolo:{film.title}</strong></h5>
+                  <><strong>Titolo:{film.title}</strong></>
                   <p><strong>Titolo Originale:{film.original_title}</strong></p>
                   <p><strong>Lingua:</strong><img src={`https://flagcdn.com/24x18/${film.original_language}.png`}
                     alt={film.original_language} /></p>
