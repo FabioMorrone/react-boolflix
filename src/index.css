@@ -1,14 +1,17 @@
 @import 'bootstrap';
 
+body {
+    background-color: black;
+}
 
 .card_film {
 
     .image_copertina {
         width: 100%;
-        object-fit: contain;
+        object-fit: cover;
         height: 100%;
     }
 
-    max-height: 330px;
-    max-width: 330px;
+    height: 330px;
+    max-width: 400px;
 }

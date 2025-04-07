@@ -22,8 +22,18 @@ function App() {
       })
   };
 
+  const numero = (voto) => {
+    return Math.ceil(voto / 2);
+  };
 
 
+  let stelle = ""
+
+  for (let i = 0; i < numero.length; i++) {
+    const stelle = numero[i];
+
+    stelle.push(<FontAwesomeIcon icon="fa-solid fa-star" />)
+  }
 
   return (
     <MoviesProvider>
@@ -44,7 +54,7 @@ function App() {
               <div className="row">
 
                 {movie.map((film) => (
-                  <div className="card_film col-3 card" key={film.id}>
+                  <div className="card_film col-3 m-3 card" key={film.id}>
                     <img src={`http://image.tmdb.org/t/p/w1920/${film.poster_path}`} className="image_copertina card-img-top" alt="..." />
                     <div className="card-body">
                       <h5 className="card-title">Titolo:{film.title}</h5>
@@ -64,7 +74,7 @@ function App() {
                       <h6 className="card-subtitle mb-2 text-muted ">Titolo Originale:{serie.original_title}</h6>
                       <p className="card-text">Lingua:<img src={`https://flagcdn.com/24x18/${serie.original_language}.png`}
                         alt={serie.original_language} /></p>
-                      <p>Voto:{serie.vote_average}</p>
+                      <p>Voto:{serie.stelle}</p>
                     </div>
                   </div>
                 ))}
