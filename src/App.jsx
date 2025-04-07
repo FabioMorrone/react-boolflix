@@ -12,9 +12,8 @@ function App() {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=123ca39c538b7ebadb458701979d7a72&query=${tasks}`)
       .then(res => res.json())
       .then((data) => {
-        setMovie(data.results || []);
+        setMovie(data.res || []);
       })
-
   };
 
 
