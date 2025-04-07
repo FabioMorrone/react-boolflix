@@ -6,9 +6,12 @@ function App() {
 
   const [tasks, setTasks] = useState("")
   const [movie, setMovie] = useState([])
+  const [serieTv, setSerieTv] = useState([])
 
   const handleSearch = () => {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=123ca39c538b7ebadb458701979d7a72&query=${tasks}`)
+    fetch(`https://api.themoviedb.org/3/search/tv?api_key=123ca39c538b7ebadb458701979d7a72&query=${tasks}
+`)
       .then(res => res.json())
       .then((data) => {
         setMovie(data.results || []);
@@ -21,6 +24,7 @@ function App() {
   return (
     <MoviesProvider>
       <main>
+
         <div className="mb-3">
           <label htmlFor="" className="form-label"></label>
           <input
@@ -31,14 +35,14 @@ function App() {
           />
           <button className="mt-3" onClick={handleSearch}>Cerca</button>
           <div>
-            <ul>
+            <ul className="list-unstyled">
               {movie.map((film) => (
                 <li key={film.id}>
-                  <h3>{film.title}</h3>
-                  <p>Titolo Originale:{film.original_title}</p>
-                  <p>Lingua:<img src={`https://flagcdn.com/24x18/${film.original_language}.png`}
+                  <h3><strong>Titolo:{film.title}</strong></h3>
+                  <p><strong>Titolo Originale:{film.original_title}</strong></p>
+                  <p><strong>Lingua:</strong><img src={`https://flagcdn.com/24x18/${film.original_language}.png`}
                     alt={film.original_language} /></p>
-                  <p>Voto:{film.vote_average}</p>
+                  <p><strong>Voto:{film.vote_average}</strong></p>
                 </li>
               ))}
             </ul>
