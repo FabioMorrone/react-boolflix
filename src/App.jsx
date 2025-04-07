@@ -36,7 +36,8 @@ function App() {
                 <li key={film.id}>
                   <h3>{film.title}</h3>
                   <p>Titolo Originale:{film.original_title}</p>
-                  <p>Lingua:{film.original_language}</p>
+                  <p>Lingua:<img src={`https://flagcdn.com/24x18/${film.original_language}.png`}
+                    alt={film.original_language} /></p>
                   <p>Voto:{film.vote_average}</p>
                 </li>
               ))}
