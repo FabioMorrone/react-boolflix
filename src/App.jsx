@@ -39,17 +39,28 @@ function App() {
           />
           <button className="mt-3" onClick={handleSearch}>Cerca</button>
           <div>
-            <ul className="list-unstyled">
-              {movie.map((film) => (
-                <li key={film.id}>
-                  <><strong>Titolo:{film.title}</strong></>
-                  <p><strong>Titolo Originale:{film.original_title}</strong></p>
-                  <p><strong>Lingua:</strong><img src={`https://flagcdn.com/24x18/${film.original_language}.png`}
-                    alt={film.original_language} /></p>
-                  <p><strong>Voto:{film.vote_average}</strong></p>
-                </li>
-              ))}
-            </ul>
+
+            <div className="container">
+              <div className="row">
+
+                {movie.map((film) => (
+                  <div className="card_film col-3 card" key={film.id}>
+                    <img src={`http://image.tmdb.org/t/p/w1920/${film.poster_path}`} className="image_copertina card-img-top" alt="..." />
+                    <div className="card-body">
+                      <h5 className="card-title">Titolo:{film.title}</h5>
+                      <h6 className="card-subtitle mb-2 text-muted ">Titolo Originale:{film.original_title}</h6>
+                      <p className="card-text">Lingua:<img src={`https://flagcdn.com/24x18/${film.original_language}.png`}
+                        alt={film.original_language} /></p>
+                      <p>Voto:{film.vote_average}</p>
+                    </div>
+                  </div>
+                ))}
+
+              </div>
+
+
+            </div>
+
             <ul className="list-unstyled">
               {serieTv.map((serie) => (
                 <li key={serie.id}>
